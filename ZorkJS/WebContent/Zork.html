@@ -1,0 +1,117 @@
+<html>
+<head>
+<script>
+function Zork(){
+v = document.getElementById("command").value;
+
+/*document.getElementById("message").innerHTML = "<b>You said: " + v + "</b>"
+document.getElementById("parlor").style.backgroundColor = "blue";
+moves = document.getElementById("moves").text
+document.getElementById("moves").value + "\\\rYour next move"
+*/
+
+
+switch (v){
+case "1":{document.getElementById("message").innerHTML = "<b>You are in the foyer, you can press 2 to go north or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "blue";
+document.getElementById("Kitchen").style.backgroundColor = "white";
+document.getElementById("Front Room").style.backgroundColor = "white";
+document.getElementById("Library").style.backgroundColor = "white";
+document.getElementById("diningRoom").style.backgroundColor = "white";
+document.getElementById("vault").style.backgroundColor = "white";
+document.getElementById("parlor").style.backgroundColor = "white";
+document.getElementById("moves").value +=v +"\n";
+
+break;}
+case "2":{document.getElementById("message").innerHTML = "<b>You are now in the front room. You can press 1 to go South, 4 to go East, and 3 to go West or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "white";
+document.getElementById("Kitchen").style.backgroundColor = "white";
+document.getElementById("Front Room").style.backgroundColor = "blue";
+document.getElementById("Library").style.backgroundColor = "white";
+document.getElementById("diningRoom").style.backgroundColor = "white";
+document.getElementById("vault").style.backgroundColor = "white";
+document.getElementById("parlor").style.backgroundColor = "white";
+document.getElementById("moves").value +=v +" the foyer"+"\n";
+break;}
+case "3":{document.getElementById("message").innerHTML = "<b>You are now in the Library. You can press 7 to go north, 2 to go East, or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "white";
+document.getElementById("Kitchen").style.backgroundColor = "white";
+document.getElementById("Front Room").style.backgroundColor = "white";
+document.getElementById("Library").style.backgroundColor = "blue";
+document.getElementById("diningRoom").style.backgroundColor = "white";
+document.getElementById("vault").style.backgroundColor = "white";
+document.getElementById("parlor").style.backgroundColor = "white";
+document.getElementById("moves").value +=v +" the Library"+"\n";
+break;}
+case "4":{document.getElementById("message").innerHTML = "<b>You are now in the Kitchen. You can press 2 to go East, 5 to go North, or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "white";
+document.getElementById("Kitchen").style.backgroundColor = "blue";
+document.getElementById("Front Room").style.backgroundColor = "white";
+document.getElementById("Library").style.backgroundColor = "white";
+document.getElementById("diningRoom").style.backgroundColor = "white";
+document.getElementById("vault").style.backgroundColor = "white";
+document.getElementById("parlor").style.backgroundColor = "white";
+document.getElementById("moves").value +=v +" the Kitchen"+"\n";
+break;}
+case "5":{document.getElementById("message").innerHTML = "<b>You are now in the Dining Room. You can press 4 to go South, or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "white";
+document.getElementById("Kitchen").style.backgroundColor = "white";
+document.getElementById("Front Room").style.backgroundColor = "white";
+document.getElementById("Library").style.backgroundColor = "white";
+document.getElementById("diningRoom").style.backgroundColor = "blue";
+document.getElementById("vault").style.backgroundColor = "white";
+document.getElementById("parlor").style.backgroundColor = "white";
+document.getElementById("moves").value +=v +" the Dining Room"+"\n";
+break;}
+case "6":{document.getElementById("message").innerHTML = "<b>You are now in the Vault. You can press 7 to go West, or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "white";
+document.getElementById("Kitchen").style.backgroundColor = "white";
+document.getElementById("Front Room").style.backgroundColor = "white";
+document.getElementById("Library").style.backgroundColor = "white";
+document.getElementById("diningRoom").style.backgroundColor = "white";
+document.getElementById("vault").style.backgroundColor = "blue";
+document.getElementById("parlor").style.backgroundColor = "white";
+document.getElementById("moves").value +=v +" the Vault"+"\n";
+break;}
+case "7":{document.getElementById("message").innerHTML = "<b>You are now in the Parlor. You can press 3 to go South, 6 to go East, or Q to quit: </b>";
+document.getElementById("Foyer").style.backgroundColor = "white";
+document.getElementById("Kitchen").style.backgroundColor = "white";
+document.getElementById("Front Room").style.backgroundColor = "white";
+document.getElementById("Library").style.backgroundColor = "white";
+document.getElementById("diningRoom").style.backgroundColor = "white";
+document.getElementById("vault").style.backgroundColor = "white";
+document.getElementById("parlor").style.backgroundColor = "blue";
+document.getElementById("moves").value +=v +" the Parlor"+"\n";
+break;}
+default:alert("you're dead");
+}
+document.getElementById("command").value="";
+document.getElementById("command").focus();
+
+
+}
+
+</script>
+</head>
+<body>
+<h1>welcome to zork</h1>
+<table border="1" style="width:400px">
+<tr><td border="1" id="parlor">&nbsp;</td><td border="1" id="vault">&nbsp;</td><td border="1" id="diningRoom">&nbsp;</td></tr>
+<tr><td border="1" id="Library">&nbsp;</td><td border="1" id="Front Room">&nbsp;</td><td border="1" id="Kitchen">&nbsp;</td></tr>
+<tr><td></td><td border="1" id="Foyer">&nbsp;</td><td></td></tr>
+</table>
+
+<div id="message">
+
+</div>
+<form action="javascript:Zork();">
+<input type="text" name="command" id="command"></input>
+<input type="submit" id="submit" name="submit">
+<img src="http://images.clipartpanda.com/death-clipart-tombstone-clipart.gif" alt="Game over. Dude." height="50"></img>
+</form>
+<h2>your moves:</h2>
+<textarea id="moves" rows="6" cols="50">
+
+</textarea>
+</body>
+</html>
